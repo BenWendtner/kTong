@@ -7,15 +7,14 @@
 	</ul>
 </div>
 
-<div id="form">
-	<h2>Formluar</h2>
+
+<div id="middlebox">
+	<h2>Hier die Beschreibung:</h2>
+	<div id="description"><%= render :partial => 'cart_items/show', :locals => {:product => @product} %></div>
+	
+	<h2>Hier das Formular:</h2>
+	<div id="form"><%= render :partial => 'cart_items/form', :locals => {:cart_item => @cart_item} %></div>
 </div>
-
-Hier die Beschreibung:
-<div id="description"><%= render :partial => 'cart_items/show', :locals => {:product => @product} %></div>
-
-Hier das Formular:
-<div id="form"><%= render :partial => 'cart_items/form', :locals => {:cart_item => @cart_item} %></div>
 
 <div id="cart">
 	<h2>Warenkorb</h2>
