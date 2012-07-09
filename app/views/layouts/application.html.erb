@@ -7,15 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= flash[:notice] %>
-<% if user_signed_in? %>
-	<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-<% else %>
-	<%= link_to 'Login', new_user_session_path %>
-<% end %>
-
-<%= yield %>
-
+	<%= flash[:notice] %>
+	<header>
+		<h1>kTong</h1>
+	
+	<nav>
+		Acoount | Meine Bestellungen | 
+	<% if user_signed_in? %>
+		<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+	<% else %>
+		<%= link_to 'Login', new_user_session_path %>
+	<% end %>
+	</nav>
+	</header>
+	
+	
+	<div id=content>
+	<%= yield %>
+	</div>
 </body>
 </html>

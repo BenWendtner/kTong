@@ -1,7 +1,0 @@
-/*
- *= require_self
- *= require_tree .
-*/
-
-/* Import colors, mixins and buttons */
-@import 'global';
