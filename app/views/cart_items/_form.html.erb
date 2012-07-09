@@ -1,6 +1,5 @@
-<%= form_for(cart_item) do |f| %>
-
-  <div class="actions">
+<%= form_for(cart_item, :remote => true ) do |f| %>
+	<%= f.hidden_field :product_id, :value => cart_item.product.id %>
+	<%= f.text_field :amount %>
     <%= f.submit %>
-  </div>
 <% end %>
