@@ -1,10 +1,14 @@
 KTong::Application.routes.draw do
   
+  resources :cart_items
+
   devise_for :users
 
   match 'Impressum' => 'static#impressum', :as => :impressum
   match 'AGB' => 'static#agb', :as => :agb
   
+  
+  get 'orders/index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -54,7 +58,7 @@ KTong::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'static#impressum'
+  root :to => 'orders#index'
 
   # See how all your routes lay out with "rake routes"
 
