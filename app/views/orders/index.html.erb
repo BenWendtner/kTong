@@ -1,5 +1,5 @@
-Hier kommen die Kategorien
 <div id="categories">
+	<h2>Produkte</h2>
 	<ul>
 		<li><%= link_to "Kat1", cart_item_path(1), :remote => true %></li>
 		<li><%= link_to "Kat2", cart_item_path(2), :remote => true %></li>
@@ -7,12 +7,12 @@ Hier kommen die Kategorien
 	</ul>
 </div>
 
-Hier das Formular
-<div id="form"></div>
+<div id="form">
+	<h2>Formluar</h2>
+</div>
 
-
-Warenkorb:
 <div id="cart">
+	<h2>Warenkorb</h2>
 	<ul>
 		<% @cart_items.each do |cart_item| %>
 			<li><%= cart_item.amount %>x <%= cart_item.product.name %> - <%= cart_item.product.color %> </li>

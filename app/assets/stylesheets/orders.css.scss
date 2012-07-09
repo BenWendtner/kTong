@@ -1,3 +1,30 @@
 // Place all the styles related to the orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#categories {
+  width:250px;
+  height:499px;
+  
+  float:left;
+}
+
+#form {
+  width:250px;
+  height:499px;
+  
+  float:left;
+
+}
+
+#cart {
+  width:250px;
+  height:499px;
+  
+  float:right;
+}
+
+
+ul, li {
+  list-style:none;
+}
