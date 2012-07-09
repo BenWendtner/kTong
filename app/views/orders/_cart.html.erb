@@ -1,6 +1,0 @@
-Warenkorb: <br />
-<ul>
-<% user.cart_items.each do |cart_item| %>
-	<li><%= cart_item.amount %>x <%= cart_item.product.name %> - <%= cart_item.product.color %> </li>
-<% end %>
-</ul>

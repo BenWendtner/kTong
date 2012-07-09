@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <div>
+  	<h1>Name: <%= @cart_item.product.name %></h1>
+  	Color: <%= @cart_item.product.color %>
+  </div>
+	
   <div class="actions">
     <%= f.submit %>
   </div>

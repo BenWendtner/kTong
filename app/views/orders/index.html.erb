@@ -1,8 +1,21 @@
 Hier kommen die Kategorien
+<div id="categories">
+	<ul>
+		<li><%= link_to "Kat1", cart_item_path(1), :remote => true %></li>
+		<li><%= link_to "Kat2", cart_item_path(2), :remote => true %></li>
+		<li><%= link_to "Kat3", cart_item_path(3), :remote => true %></li>
+	</ul>
+</div>
 
-Warenkorb: <br />
-<ul>
-<% @user.cart_items.each do |cart_item| %>
-	<li><%= cart_item.amount %>x <%= cart_item.product.name %> - <%= cart_item.product.color %> </li>
-<% end %>
-</ul>
+Hier das Formular
+<div id="form"></div>
+
+
+Warenkorb:
+<div id="cart">
+	<ul>
+		<% @cart_items.each do |cart_item| %>
+			<li><%= cart_item.amount %>x <%= cart_item.product.name %> - <%= cart_item.product.color %> </li>
+		<% end %>
+	</ul>
+</div>
