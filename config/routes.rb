@@ -1,5 +1,7 @@
 KTong::Application.routes.draw do
   
+  devise_for :users
+
   match 'Impressum' => 'static#impressum', :as => :impressum
   match 'AGB' => 'static#agb', :as => :agb
   
