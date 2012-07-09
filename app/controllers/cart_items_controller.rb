@@ -27,8 +27,7 @@ class CartItemsController < ApplicationController
     @cart_item = CartItem.new
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @cart_item }
+      format.js
     end
   end
 

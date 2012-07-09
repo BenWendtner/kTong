@@ -9,6 +9,8 @@ KTong::Application.routes.draw do
   
   
   get 'orders/index'
+  get 'cart_items/new'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
