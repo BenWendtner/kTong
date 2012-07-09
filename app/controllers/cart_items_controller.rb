@@ -2,7 +2,7 @@ class CartItemsController < ApplicationController
   # GET /cart_items
   # GET /cart_items.json
   def index
-    @cart_items = CartItem.all
+    @cart_items = current_user.cart_items
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,15 +40,11 @@ class CartItemsController < ApplicationController
   # POST /cart_items.json
   def create
     @cart_item = CartItem.new(params[:cart_item])
-
+    @cart_item.user_id = current_user.id
+    @cart_item.save
+    
     respond_to do |format|
-      if @cart_item.save
-        format.html { redirect_to @cart_item, notice: 'Cart item was successfully created.' }
-        format.json { render json: @cart_item, status: :created, location: @cart_item }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @cart_item.errors, status: :unprocessable_entity }
-      end
+      format.js  
     end
   end
 

@@ -3,8 +3,11 @@ class OrdersController < ApplicationController
   def index
     #@categories = 
     @product = Product.find(params[:product_id])
+    
     @cart_item = CartItem.new
-    @cart_items = User.find(1).cart_items
+    @cart_item.product = @product
+    
+    @cart_items = current_user.cart_items
     
     respond_to do |format|
       format.html

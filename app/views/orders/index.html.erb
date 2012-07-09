@@ -18,9 +18,5 @@
 
 <div id="cart">
 	<h2>Warenkorb</h2>
-	<ul>
-		<% @cart_items.each do |cart_item| %>
-			<li><%= cart_item.amount %>x <%= cart_item.product.name %> - <%= cart_item.product.color %> </li>
-		<% end %>
-	</ul>
+	<%= render :partial => 'cart_items/index', :locals => {:cart_items => @cart_items} %>
 </div>
