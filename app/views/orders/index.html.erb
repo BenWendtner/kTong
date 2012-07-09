@@ -1,15 +1,21 @@
 <div id="categories">
 	<h2>Produkte</h2>
 	<ul>
-		<li><%= link_to "Kat1", cart_item_path(1), :remote => true %></li>
-		<li><%= link_to "Kat2", cart_item_path(2), :remote => true %></li>
-		<li><%= link_to "Kat3", cart_item_path(3), :remote => true %></li>
+		<li><%= link_to "Kat1", orders_index_path(:product_id => 1) %></li>
+		<li><%= link_to "Kat2", orders_index_path(:product_id => 2) %></li>
+		<li><%= link_to "Kat3", orders_index_path(:product_id => 3) %></li>
 	</ul>
 </div>
 
 <div id="form">
 	<h2>Formluar</h2>
 </div>
+
+Hier die Beschreibung:
+<div id="description"><%= render :partial => 'cart_items/show', :locals => {:product => @product} %></div>
+
+Hier das Formular:
+<div id="form"><%= render :partial => 'cart_items/form', :locals => {:cart_item => @cart_item} %></div>
 
 <div id="cart">
 	<h2>Warenkorb</h2>
