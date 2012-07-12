@@ -1,5 +1,5 @@
 <div id="categories">
-	<h2>Produkte</h2>
+	<h2 id="leftbanner">Produkte</h2>
 	<ul>
 		<li><%= link_to "Kat1", orders_index_path(:product_id => 1) %></li>
 		<li><%= link_to "Kat2", orders_index_path(:product_id => 2) %></li>
@@ -17,6 +17,6 @@
 </div>
 
 <div id="cart">
-	<h2>Warenkorb</h2>
+	<h2 id="rightbanner">Warenkorb</h2>
 	<%= render :partial => 'cart_items/index', :locals => {:cart_items => @cart_items} %>
 </div>

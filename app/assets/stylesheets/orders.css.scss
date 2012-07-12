@@ -24,7 +24,33 @@
   float:right;
 }
 
-
 ul, li {
   list-style:none;
+}
+
+#leftbanner, #rightbanner {
+  height:30px;
+  width:250px;
+  
+  margin-top:25px;
+
+  padding-top:5px;
+  padding-bottom:5px;
+  
+  text-align:center;
+  
+  color:white;
+  background-color:#ff7900;
+}
+
+#leftbanner {
+  background-image:url('leftbanner_end.png');
+  background-position:right;
+  background-repeat:no-repeat;
+}
+
+#rightbanner {
+  background-image:url('rightbanner_end.png');
+  background-position:left;
+  background-repeat:no-repeat;
 }
