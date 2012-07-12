@@ -42,3 +42,15 @@ ul, li {
   color:white;
   background-color:#ff7900;
 }
+
+#leftbanner {
+  background-image:url('leftbanner_end.png');
+  background-position:right;
+  background-repeat:no-repeat;
+}
+
+#rightbanner {
+  background-image:url('rightbanner_end.png');
+  background-position:left;
+  background-repeat:no-repeat;
+}
