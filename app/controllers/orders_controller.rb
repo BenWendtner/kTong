@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     @cart_item = CartItem.new
     @cart_item.product = @product
     
-    @cart_items = current_user.cart_items
+    @cart_items = User.find(1).cart_items
     
     respond_to do |format|
       format.html
