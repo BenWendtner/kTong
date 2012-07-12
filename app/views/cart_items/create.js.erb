@@ -1,1 +1,1 @@
-$('#cart-item-list').append('<li><%= @cart_item.product.name %><li>');
+$('#cart-item-list').append('<li><%= render :partial => 'cart_items/cart_item', :locals => {:cart_item => @cart_item} %><li>');

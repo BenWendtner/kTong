@@ -1,2 +1,3 @@
-Name: <%= cart_item.product.name %> <br />
-Menge: <%= cart_item.amount %> <br />
+Name <%= cart_item.product.name %> <br />
+Menge <%= cart_item.amount %> <br />
+Delete <%= link_to 'Löschen', cart_item_path(cart_item), :remote => true, :method => :delete %>
