@@ -2,7 +2,7 @@ class CartItemsController < ApplicationController
   # GET /cart_items
   # GET /cart_items.json
   def index
-    @cart_items = current_user.cart_items
+    @cart_items = User.find(1).cart_items
 
     respond_to do |format|
       format.html # index.html.erb
