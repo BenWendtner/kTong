@@ -9,9 +9,9 @@
 <body>
 	<%= flash[:notice] %>
 	<header>
-		<h1 id="logo">kTong</h1>
+		<h1 id="logo"><%= link_to 'kTong', root_path %></h1>
 	<nav>
-		Acoount | Meine Bestellungen | 
+		Acount | Meine Bestellungen | 
 		<% if user_signed_in? %>
 			<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
 		<% else %>
@@ -25,7 +25,10 @@
 	</div>
 	
 	<footer>
-		Hier kommt der Footer hin. Impressum, AGB, Lieferanten...
+		Hier kommt einmal der Footer hin... 
+		<%= link_to 'Impressum', impressum_path %>,
+		<%= link_to 'AGB', agb_path %>
+
 	</footer>
 </body>
 </html>
