@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Import colors, mixins and buttons */
+@import 'global';
+
 #categories {
   width:250px;
   height:500px;
@@ -42,7 +45,7 @@ ul, li {
   text-align:center;
   
   color:white;
-  background-color:#ff7900;
+  background-color:$orange;
 }
 
 #leftbanner {
