@@ -1,5 +1,9 @@
 <div>
-Hier nochmal die Einkaufsliste
+Hier nochmal die Einkaufsliste:
+<% @cart_items.each do |cart_item| %>
+	<%= cart_item.product.name %>
+	<%= cart_item.amount %>
+<% end %>
 </div>
 
 <div>
