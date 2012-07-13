@@ -21,7 +21,13 @@ class CartItemsController < ApplicationController
   def destroy
     @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
-
+    
+    if user_signed_in?
+      @cart_items = CartItem.where('user_id = ?',current_user.id)
+    else
+      @cart_items = CartItem.find_all_by_id(session[:cart_items])
+    end  
+    
     respond_to do |format|
       format.js
     end

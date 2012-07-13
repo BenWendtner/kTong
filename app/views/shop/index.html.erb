@@ -28,8 +28,5 @@
 <div id="cart">
 	<h2 id="rightbanner">Warenkorb</h2>
 	<%= render :partial => 'cart_items/index', :locals => {:cart_items => @cart_items} %>
-</div>
-
-<div>
-	<%= link_to '-> Zur Kasse', shop_checkout_path %>
+	<%= link_to '-> Zur Kasse', shop_checkout_path, :id => 'link-to-checkout', :style => 'display:hidden;' %>
 </div>
