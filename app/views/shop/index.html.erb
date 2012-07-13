@@ -8,6 +8,13 @@
 					<% @categories.each do |subcategory| %>
 						<% if subcategory.parent_id == category.id %>
 							<li id="category-<%= subcategory.id %>"><%= link_to subcategory.name, shop_index_path(:category_id => subcategory.id) %></li>
+							<ul>
+							<% @categories.each do |subsubcategory| %>
+								<% if subsubcategory.parent_id == subcategory.id %>
+									<li id="category-<%= subsubcategory.id %>"><%= link_to subsubcategory.name, shop_index_path(:category_id => subsubcategory.id) %></li>
+								<% end %>
+							<% end %>
+							</ul>
 						<% end %>
 					<% end %>
 				</ul>
