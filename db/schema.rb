@@ -43,8 +43,9 @@ ActiveRecord::Schema.define(:version => 20120713182929) do
   end
 
   create_table "products", :force => true do |t|
-    t.string "name",  :null => false
-    t.string "color", :null => false
+    t.string  "name",        :null => false
+    t.string  "color",       :null => false
+    t.integer "category_id", :null => false
   end
 
   create_table "users", :force => true do |t|

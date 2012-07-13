@@ -1,9 +1,11 @@
 <div id="categories">
 	<h2 id="leftbanner">Produkte</h2>
 	<ul>
-		<li><%= link_to "Kat1", orders_index_path(:product_id => 1) %></li>
-		<li><%= link_to "Kat2", orders_index_path(:product_id => 2) %></li>
-		<li><%= link_to "Kat3", orders_index_path(:product_id => 3) %></li>
+		<% @categories.each do |category| %>
+			<% if category.parent_id == nil %>
+				<li id="category-<%= category.id %>"><%= category.name %></li>
+			<% end %>
+		<% end %>
 	</ul>
 </div>
 
