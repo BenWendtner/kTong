@@ -10,6 +10,10 @@
   height:500px;
   
   float:left;
+  
+  ul {
+    margin-left:25px;
+  }
 }
 
 #middlebox {
@@ -27,10 +31,10 @@
   height:500px;
   
   float:right;
-}
-
-ul, li {
-  list-style:none;
+  
+  ul, li {
+    list-style:none;
+  }
 }
 
 #leftbanner, #rightbanner {
@@ -52,6 +56,8 @@ ul, li {
   background-image:url('leftbanner_end.png');
   background-position:right;
   background-repeat:no-repeat;
+  
+  margin-bottom:25px;
 }
 
 #rightbanner {

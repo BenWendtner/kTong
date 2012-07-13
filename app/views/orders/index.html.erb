@@ -4,6 +4,13 @@
 		<% @categories.each do |category| %>
 			<% if category.parent_id == nil %>
 				<li id="category-<%= category.id %>"><%= category.name %></li>
+				<ul>
+					<% @categories.each do |subcategory| %>
+						<% if subcategory.parent_id == category.id %>
+							<li id="category-<%= subcategory.id %>"><%= subcategory.name %></li>
+						<% end %>
+					<% end %>
+				</ul>
 			<% end %>
 		<% end %>
 	</ul>
