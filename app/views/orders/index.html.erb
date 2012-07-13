@@ -2,7 +2,7 @@
 	<h2 id="leftbanner">Produkte</h2>
 	<ul>
 		<% @categories.each do |category| %>
-			<% if category.parent_id == nil %>
+			<% if category.parent_id.nil? %>
 				<li id="category-<%= category.id %>"><%= category.name %></li>
 				<ul>
 					<% @categories.each do |subcategory| %>
