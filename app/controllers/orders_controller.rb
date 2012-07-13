@@ -7,7 +7,11 @@ class OrdersController < ApplicationController
     @cart_item = CartItem.new
     @cart_item.product = @product
     
-    @cart_items = User.find(1).cart_items
+    if user_signed_in?
+      @cart_items = current_user.cart_items
+    else
+      @cart_items = CartItem.find_all_by_id(session[:cart_items])
+    end
     
     respond_to do |format|
       format.html

@@ -2,7 +2,12 @@ class CartItemsController < ApplicationController
   # GET /cart_items
   # GET /cart_items.json
   def index
-    @cart_items = User.find(1).cart_items
+    
+    if user_signed_in?
+      @cart_items = current_user.cart_items
+    else
+      @cart_items = CartItem.find_all_by_id(session[:cart_items])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,62 +15,23 @@ class CartItemsController < ApplicationController
     end
   end
 
-  # GET /cart_items/1
-  # GET /cart_items/1.json
-  def show
-    @cart_item = CartItem.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @cart_item }
-    end
-  end
-
-  # GET /cart_items/new
-  # GET /cart_items/new.json
-  def new
-    @cart_item = CartItem.new
-
+  def create
+    @cart_item = CartItem.new(params[:cart_item])
+      
+    if user_signed_in?
+      @cart_item.user_id = current_user.id
+      @cart_item.save
+    else
+      @cart_item.save
+      (session[:cart_items] ||= []) << @cart_item.id
+    end  
+     
     respond_to do |format|
       format.js
     end
   end
 
-  # GET /cart_items/1/edit
-  def edit
-    @cart_item = CartItem.find(params[:id])
-  end
-
-  # POST /cart_items
-  # POST /cart_items.json
-  def create
-    @cart_item = CartItem.new(params[:cart_item])
-    @cart_item.user_id = current_user.id
-    @cart_item.save
-    
-    respond_to do |format|
-      format.js  
-    end
-  end
-
-  # PUT /cart_items/1
-  # PUT /cart_items/1.json
-  def update
-    @cart_item = CartItem.find(params[:id])
-
-    respond_to do |format|
-      if @cart_item.update_attributes(params[:cart_item])
-        format.html { redirect_to @cart_item, notice: 'Cart item was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @cart_item.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /cart_items/1
-  # DELETE /cart_items/1.json
   def destroy
     @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
