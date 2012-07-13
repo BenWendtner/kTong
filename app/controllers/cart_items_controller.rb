@@ -6,8 +6,7 @@ class CartItemsController < ApplicationController
     if user_signed_in?
       @cart_item.user_id = current_user.id
       merge_cart_items(current_user.cart_items, @cart_item)
-      @cart_items = current_user.cart_items
-      @cart_items << @cart_item
+      @cart_items = CartItem.where('user_id = ?',current_user.id)
     else
       merge_cart_items(CartItem.find_all_by_id(session[:cart_items]), @cart_item)
       (session[:cart_items] ||= []) << @cart_item.id
