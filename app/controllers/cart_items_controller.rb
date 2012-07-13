@@ -1,6 +1,5 @@
 class CartItemsController < ApplicationController
-  # GET /cart_items
-  # GET /cart_items.json
+
   def index
     
     if user_signed_in?
