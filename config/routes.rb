@@ -9,6 +9,7 @@ KTong::Application.routes.draw do
   
   
   get 'shop/index'
+  get 'shop/checkout'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

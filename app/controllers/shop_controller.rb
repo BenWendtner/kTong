@@ -1,5 +1,7 @@
 class ShopController < ApplicationController
   
+  before_filter :authenticate_user!, :only => [:checkout]
+  
   def index
     @categories = Category.all
     @product = Product.find(params[:product_id])
@@ -12,6 +14,15 @@ class ShopController < ApplicationController
     else
       @cart_items = CartItem.find_all_by_id(session[:cart_items])
     end
+    
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+  
+  def checkout
+    @cart_items = current_user.cart_items
     
     respond_to do |format|
       format.html
