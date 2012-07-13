@@ -16,15 +16,15 @@ Category.create(id: 2, name: 'Sonstiges')
 Category.create(id: 3, name: 'Universalkarton', parent_id: 1)
 Category.create(id: 4, name: 'Bücherkarton', parent_id: 1)
 
-Category.create(id: 5, name: 'Regalelement', parent_id: 2)
-Category.create(id: 6, name: 'Fächer', parent_id: 2)
-Category.create(id: 7, name: 'Deckel', parent_id: 2)
-Category.create(id: 8, name: 'Sockel', parent_id: 2)
+Category.create(id: 5, name: 'Regalelement', parent_id: 3)
+Category.create(id: 6, name: 'Fächer', parent_id: 3)
+Category.create(id: 7, name: 'Deckel', parent_id: 3)
+Category.create(id: 8, name: 'Sockel', parent_id: 3)
 
-Category.create(id: 9, name: 'Regalelement', parent_id: 3)
-Category.create(id: 10, name: 'Fächer', parent_id: 3)
-Category.create(id: 11, name: 'Deckel', parent_id: 3)
-Category.create(id: 12, name: 'Sockel', parent_id: 3)
+Category.create(id: 9, name: 'Regalelement', parent_id: 4)
+Category.create(id: 10, name: 'Fächer', parent_id: 4)
+Category.create(id: 11, name: 'Deckel', parent_id: 4)
+Category.create(id: 12, name: 'Sockel', parent_id: 4)
 
 # Create Products
 Product.create(id: 1, name: 'Regalelement', color: 'Naturweiß', category_id: 5)
