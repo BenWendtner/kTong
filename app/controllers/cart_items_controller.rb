@@ -27,17 +27,4 @@ class CartItemsController < ApplicationController
     end
   end
   
-  private
-  
-  def merge_cart_items(cart_items, new_cart_item)
-      found = false
-      cart_items.each do |cart_item|
-        if cart_item.product_id == new_cart_item.product_id
-          found = true
-          cart_item.amount += new_cart_item.amount
-          cart_item.save
-        end
-      end
-      new_cart_item.save if found == false
-  end
 end
