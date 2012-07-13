@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   
   def index
-    #@categories = 
+    @categories = Category.all
     @product = Product.find(params[:product_id])
     
     @cart_item = CartItem.new
