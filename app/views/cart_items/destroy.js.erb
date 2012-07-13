@@ -1,1 +1,4 @@
 $('#cart #cart-item-<%= @cart_item.id %>').remove();
+<% if @cart_items.count == 0 %>
+	$('#cart #link-to-checkout').hide();
+<% end %>
