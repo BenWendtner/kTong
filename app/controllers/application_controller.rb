@@ -4,10 +4,9 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     
     if !session[:cart_items].nil?
-        CartItem.find_all_by_id(session[:cart_items]).each do |cart_item|
-          merge_cart_items(current_user.cart_items,cart_item)
-          cart_item.user_id = current_user.id
-          cart_item.save
+      CartItem.find_all_by_id(session[:cart_items]).each do |cart_item|
+        cart_item.user_id = current_user.id
+        merge_cart_items(current_user.cart_items,cart_item)
       end
     end
     
