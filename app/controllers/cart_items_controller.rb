@@ -1,20 +1,5 @@
 class CartItemsController < ApplicationController
 
-  def index
-    
-    if user_signed_in?
-      @cart_items = current_user.cart_items
-    else
-      @cart_items = CartItem.find_all_by_id(session[:cart_items])
-    end
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @cart_items }
-    end
-  end
-
-
   def create
     @cart_item = CartItem.new(params[:cart_item])
       
