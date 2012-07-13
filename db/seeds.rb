@@ -3,7 +3,7 @@
 # Delete all items from the database
 User.delete_all
 Product.delete_all
-CartItem.delete_all
+Category.delete_all
 
 # Create users
 User.create(id: 1, email: 'test1@test.com', password: '123test', password_confirmation: '123test', firstname: 'sebi', lastname: 'pöll', address: 'hinsenkampplatz 1', location: 'linz', postalcode: '4040')
