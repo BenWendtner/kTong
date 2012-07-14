@@ -2,11 +2,13 @@
 	<%= f.hidden_field :product_id, :value => cart_item.product.id %>
 	<%= f.text_field :amount, :value => 1 %>
 	
-	<select onChange="$.post('cart_items/get_product', {category_id: <%= cart_item.product.category.id %>, color: $(this).val()})">
-		<% cart_item.product.category.products.each do |product| %>
-			<option><%= product.color.capitalize %></option>
-		<% end %>
-	</select>
+	<% if cart_item.product.category.products.size > 1 %>
+		<select onChange="$.post('cart_items/get_product', {category_id: <%= cart_item.product.category.id %>, color: $(this).val()})">
+			<% cart_item.product.category.products.each do |product| %>
+				<option><%= product.color.capitalize %></option>
+			<% end %>
+		</select>
+	<% end %>
 	
     <%= f.submit %>
 <% end %>
