@@ -4,12 +4,8 @@ class ShopController < ApplicationController
   
   def index
     @categories = Category.all
-    
-    if params[:category_id].nil?
-      @product = Category.find(5).products.first
-    else
-      @product = Category.find(params[:category_id]).products.first
-    end
+     
+    @product = Category.find(params[:category_id]).products.first unless params[:category_id].nil?
     
     @cart_item = CartItem.new
     @cart_item.product = @product
