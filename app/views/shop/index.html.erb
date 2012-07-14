@@ -7,7 +7,7 @@
 				<ul>
 					<% @categories.each do |subcategory| %>
 						<% if subcategory.parent_id == category.id %>
-							<li id="category-<%= subcategory.id %>"><%= link_to subcategory.name, shop_index_path(:category_id => subcategory.id) %></li>
+							<li id="category-<%= subcategory.id %>"><%= subcategory.name %></li>
 							<ul>
 							<% @categories.each do |subsubcategory| %>
 								<% if subsubcategory.parent_id == subcategory.id %>
@@ -25,10 +25,8 @@
 
 
 <div id="middlebox">
-	<h2>Hier die Beschreibung:</h2>
 	<div id="description"><%= render :partial => 'cart_items/show', :locals => {:product => @product} %></div>
-	
-	<h2>Hier das Formular:</h2>
+
 	<div id="form"><%= render :partial => 'cart_items/form', :locals => {:cart_item => @cart_item} %></div>
 </div>
 
