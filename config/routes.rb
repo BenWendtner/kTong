@@ -1,6 +1,7 @@
 KTong::Application.routes.draw do
   
   resources :cart_items
+  post 'cart_items/get_product'
 
   devise_for :users
 
@@ -10,6 +11,7 @@ KTong::Application.routes.draw do
   
   get 'shop/index'
   get 'shop/checkout'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -34,8 +34,8 @@
 	<h2 id="rightbanner">Warenkorb</h2>
 	<%= render :partial => 'cart_items/index', :locals => {:cart_items => @cart_items} %>
 	<% if @cart_items.count == 0 %>
-		<%= link_to '-> Zur Kasse', shop_checkout_path, :id => 'link-to-checkout', :style => 'display:none;'%>
+		<%= link_to '-> Zur Kasse', shop_checkout_path, :id => 'link-to-checkout', :style => 'display:none;' %>
 	<% else %>
-		<%= link_to '-> Zur Kasse', shop_checkout_path, :id => 'link-to-checkout'%>
+		<%= link_to '-> Zur Kasse', shop_checkout_path, :id => 'link-to-checkout' %>
 	<% end %>
 </div>

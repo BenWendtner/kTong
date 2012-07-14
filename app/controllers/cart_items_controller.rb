@@ -33,4 +33,12 @@ class CartItemsController < ApplicationController
     end
   end
   
+  def get_product
+    @product = Product.where('category_id = ? AND color = ?', params[:category_id], params[:color]).first
+    
+    respond_to do |format|
+      format.js
+    end
+  end
+  
 end

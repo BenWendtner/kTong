@@ -1,0 +1,2 @@
+$('#description').html('<%= escape_javascript(render :partial => 'cart_items/show', :locals => {:product => @product}) %>');
+$('#cart_item_product_id').val('<%= @product.id %>');
