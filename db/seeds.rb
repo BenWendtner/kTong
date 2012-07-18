@@ -27,7 +27,10 @@ Category.create(id: 11, name: 'Deckel', parent_id: 4)
 Category.create(id: 12, name: 'Sockel', parent_id: 4)
 
 # Create Products
-Product.create(id: 1, name: 'Regalelement', color: 'Naturweiß', category_id: 5)
+product = Product.new(id: 1, name: 'Regalelement', color: 'Naturweiß', category_id: 5)
+product.image = File.open(File.join(Rails.root, '/app/assets/images/products/Unv_120630_Ansicht_Bild_Unv.jpg'))
+product.save!
+
 Product.create(id: 2, name: 'Regalelement', color: 'Möbelbraun', category_id: 5)
 Product.create(id: 3, name: 'Fächer', color: 'Naturweiß', category_id: 6)
 Product.create(id: 4, name: 'Fächer', color: 'Möbelbraun', category_id: 6)

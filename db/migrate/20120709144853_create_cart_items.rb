@@ -4,6 +4,7 @@ class CreateCartItems < ActiveRecord::Migration
       t.references :user
       t.references :product
       t.integer :amount, :null => false
+      
       t.timestamps
     end
   end
