@@ -4,22 +4,27 @@
 
 		// Accordion
 		$("div.accordion").accordion({
-		    autoHeight: false,
+			 create: function(event, ui) {
+			 	$( "div.categories-accordion" ).accordion( "option", "active", 0 );
+				$( "div.subcategories-accordion" ).accordion( "option", "active", 1 );
+			 },
+			 animated: '',
+		     autoHeight: false,
 		    //collapsible: true
 		    //active: true
 		});
-		//$( "div.categories-accordion" ).accordion( "option", "active", 0 );
-		//$( "div.subcategories-accordion" ).accordion( "option", "active", 1 );
+		
+		$( "div.accordion" ).accordion( "option", "animated", 'slide' );
 	});
 </script>
 
 <div id="categories">
 	<h2 id="leftbanner">Produkte</h2>
 	
-	<div class="accordion">
+	<div class="accordion categories-accordion">
 		<% @categories.each do |category| %>
 			<h3><a href="#"><%= category.name %></a></h3>
-			<div class="accordion">
+			<div class="accordion subcategories-accordion">
 				<% category.children.each do |subcategory| %>
 			       	<h3><a href="#"> -> <%= subcategory.name %></a></h3>
 			       	<div>
