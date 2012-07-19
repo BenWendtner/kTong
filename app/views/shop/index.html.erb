@@ -1,17 +1,15 @@
 <!-- Nur zum Testen, wird noch entfernt -->
 <script type="text/javascript">
 	$(function(){
-
 		// Accordion
 		$("div.accordion").accordion({
 			 create: function(event, ui) {
-			 	$( "div.categories-accordion" ).accordion( "option", "active", 0 );
-				$( "div.subcategories-accordion" ).accordion( "option", "active", 1 );
+			 	$( "div.categories-accordion" ).accordion( "option", "active", $('.category-menu-item').index($('#category-id-<%= @product.category.parent.parent.id.to_s %>')));
+			 	$( "div.subcategories-accordion" ).accordion( "option", "active", $('.subcategory-menu-item').index($('#subcategory-id-<%= @product.category.parent.id.to_s %>')));
 			 },
 			 animated: '',
 		     autoHeight: false,
 		    //collapsible: true
-		    //active: true
 		});
 		
 		$( "div.accordion" ).accordion( "option", "animated", 'slide' );
@@ -22,11 +20,17 @@
 	<h2 id="leftbanner">Produkte</h2>
 	
 	<div class="accordion categories-accordion">
+		
+		<% 
+		   # Don't show "Sonstiges"
+		   @categories.delete_if{|category| category.name == 'Sonstiges'}
+		%>
+
 		<% @categories.each do |category| %>
-			<h3><a href="#"><%= category.name %></a></h3>
+			<h3><%= link_to category.name, '#', :class => 'category-menu-item', :id => 'category-id-'+category.id.to_s %></h3>
 			<div class="accordion subcategories-accordion">
 				<% category.children.each do |subcategory| %>
-			       	<h3><a href="#"> -> <%= subcategory.name %></a></h3>
+			       	<h3> -> <%= link_to subcategory.name, '#', :class => 'subcategory-menu-item', :id => 'subcategory-id-'+subcategory.id.to_s %></h3>
 			       	<div>
 				        <% subcategory.children.each do |subsubcategory| %>
 					       	<h3> ---> <%= link_to subsubcategory.name, shop_index_path(:category_id => subsubcategory.id) %></h3>
