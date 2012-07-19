@@ -3,7 +3,7 @@ class ShopController < ApplicationController
   before_filter :authenticate_user!, :only => [:checkout]
   
   def index
-    @categories = Category.all
+    @categories = Category.where("parent_id IS NULL")
      
     @product = Category.find(params[:category_id]).products.first unless params[:category_id].nil?
     

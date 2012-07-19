@@ -1,27 +1,36 @@
+<!-- Nur zum Testen, wird noch entfernt -->
+<script type="text/javascript">
+	$(function(){
+
+		// Accordion
+		$("div.accordion").accordion({
+		    autoHeight: false,
+		    collapsible: true,
+		    active: false
+		});
+	});
+</script>
+
 <div id="categories">
 	<h2 id="leftbanner">Produkte</h2>
-	<ul>
+	
+	<div class="accordion">
 		<% @categories.each do |category| %>
-			<% if category.parent_id.nil? %>
-				<li id="category-<%= category.id %>"><%= category.name %></li>
-				<ul>
-					<% @categories.each do |subcategory| %>
-						<% if subcategory.parent_id == category.id %>
-							<li id="category-<%= subcategory.id %>"><%= subcategory.name %></li>
-							<ul>
-							<% @categories.each do |subsubcategory| %>
-								<% if subsubcategory.parent_id == subcategory.id %>
-									<li id="category-<%= subsubcategory.id %>"><%= link_to subsubcategory.name, shop_index_path(:category_id => subsubcategory.id) %></li>
-								<% end %>
-							<% end %>
-							</ul>
+			<h3><a href="#"><%= category.name %></a></h3>
+			<div class="accordion">
+				<% category.children.each do |subcategory| %>
+			       	<h3><a href="#"> -> <%= subcategory.name %></a></h3>
+			       	<div>
+				        <% subcategory.children.each do |subsubcategory| %>
+					       	<h3> ---> <%= link_to subsubcategory.name, shop_index_path(:category_id => subsubcategory.id) %></h3>
 						<% end %>
-					<% end %>
-				</ul>
-			<% end %>
+					</div>
+				<% end %>
+			</div>
 		<% end %>
-	</ul>
-</div>
+	</div>
+</div>   
+	
 
 
 <div id="middlebox">
