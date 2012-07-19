@@ -3,7 +3,7 @@
 	<%= f.text_field :amount, :value => 1 %>
 	
 	<% if cart_item.product.category.products.size > 1 %>
-		<select onChange="$.post('cart_items/get_product', {category_id: <%= cart_item.product.category.id %>, color: $(this).val()})">
+		<select onChange="$.post('<%= cart_items_get_product_path %>', {category_id: <%= cart_item.product.category.id %>, color: $(this).val()})">
 			<% cart_item.product.category.products.each do |product| %>
 				<option><%= product.color.capitalize %></option>
 			<% end %>
