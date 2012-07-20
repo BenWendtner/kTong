@@ -1,3 +1,7 @@
 <h1><%= product.name %></h1>
-<%= image_tag(product.image.url(:medium)) %>
+<%= link_to(image_tag(product.image.url(:medium)),'#picture-box', :class => 'fancybox-link') %>
 <p>Farbe: <%= product.color %></p>
+<div id="picture-box" style="display:none;">
+	<%= image_tag(product.image.url(:original)) %>
+</div>
+
