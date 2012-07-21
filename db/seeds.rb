@@ -13,33 +13,33 @@ User.create(id: 2, email: 'test2@test.com', password: '123test', password_confir
 # Create Categories
 Category.create(id: 1, name: 'Kartonmöbel')
 
-Category.create(id: 3, name: 'Universalkarton', parent_id: 1)
-Category.create(id: 4, name: 'Bücherkarton', parent_id: 1)
+Category.create(id: 2, name: 'Universalkarton', parent_id: 1)
+Category.create(id: 3, name: 'Bücherkarton', parent_id: 1)
 
-Category.create(id: 5, name: 'Regalelement', parent_id: 3)
-Category.create(id: 6, name: 'Fächer', parent_id: 3)
-Category.create(id: 7, name: 'Deckel', parent_id: 3)
-Category.create(id: 8, name: 'Sockel', parent_id: 3)
+Category.create(id: 4, name: 'Regalelement', parent_id: 2)
+Category.create(id: 5, name: 'Fächer', parent_id: 2)
+Category.create(id: 6, name: 'Deckel', parent_id: 2)
+Category.create(id: 7, name: 'Sockel', parent_id: 2)
 
-Category.create(id: 9, name: 'Regalelement', parent_id: 4)
-Category.create(id: 10, name: 'Fächer', parent_id: 4)
-Category.create(id: 11, name: 'Deckel', parent_id: 4)
-Category.create(id: 12, name: 'Sockel', parent_id: 4)
+Category.create(id: 8, name: 'Regalelement', parent_id: 3)
+Category.create(id: 9, name: 'Fächer', parent_id: 3)
+Category.create(id: 10, name: 'Deckel', parent_id: 3)
+Category.create(id: 11, name: 'Sockel', parent_id: 3)
 
 # Create Products
-Product.create(id: 1, name: 'Regalelement', color: 'Naturweiß', category_id: 5)
-Product.create(id: 2, name: 'Regalelement', color: 'Möbelbraun', category_id: 5)
-Product.create(id: 3, name: 'Fächer', color: 'Naturweiß', category_id: 6)
-Product.create(id: 4, name: 'Fächer', color: 'Möbelbraun', category_id: 6)
-Product.create(id: 5, name: 'Deckel', color: 'Naturweiß', category_id: 7)
-Product.create(id: 6, name: 'Sockel', color: 'Naturweiß', category_id: 8)
+Product.create(id: 1, name: 'Regalelement', color: 'Naturweiß', category_id: 4)
+Product.create(id: 2, name: 'Regalelement', color: 'Möbelbraun', category_id: 4)
+Product.create(id: 3, name: 'Fächer', color: 'Naturweiß', category_id: 5)
+Product.create(id: 4, name: 'Fächer', color: 'Möbelbraun', category_id: 5)
+Product.create(id: 5, name: 'Deckel', color: 'Naturweiß', category_id: 6)
+Product.create(id: 6, name: 'Sockel', color: 'Naturweiß', category_id: 7)
 
-Product.create(id: 7, name: 'Regalelement', color: 'Naturweiß', category_id: 9)
-Product.create(id: 8, name: 'Regalelement', color: 'Möbelbraun', category_id: 9)
-Product.create(id: 9, name: 'Fächer', color: 'Naturweiß', category_id: 10)
-Product.create(id: 10, name: 'Fächer', color: 'Möbelbraun', category_id: 10)
-Product.create(id: 11, name: 'Deckel', color: 'Naturweiß', category_id: 11)
-Product.create(id: 12, name: 'Sockel', color: 'Naturweiß', category_id: 12)
+Product.create(id: 7, name: 'Regalelement', color: 'Naturweiß', category_id: 8)
+Product.create(id: 8, name: 'Regalelement', color: 'Möbelbraun', category_id: 8)
+Product.create(id: 9, name: 'Fächer', color: 'Naturweiß', category_id: 9)
+Product.create(id: 10, name: 'Fächer', color: 'Möbelbraun', category_id: 9)
+Product.create(id: 11, name: 'Deckel', color: 'Naturweiß', category_id: 10)
+Product.create(id: 12, name: 'Sockel', color: 'Naturweiß', category_id: 11)
 
 # Create Pictures
 picture = Picture.new(id: 1, position: 1, product_id: 1)
@@ -75,18 +75,30 @@ picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Bue
 picture.save!
 
 picture = Picture.new(id: 9, position: 1, product_id: 9)
-picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Unv_120630_Ansicht_Bild_Fach.jpg'))
+picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Bue_120630_Ansicht_Bild_Fach.jpg'))
 picture.save!
 
 picture = Picture.new(id: 10, position: 1, product_id: 10)
-picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Unv_120630_Ansicht_Bild_Fach.jpg'))
+picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Bue_120630_Ansicht_Bild_Fach.jpg'))
 picture.save!
 
 picture = Picture.new(id: 11, position: 1, product_id: 11)
-picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Unv_120630_Ansicht_Bild_Deckel.jpg'))
+picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Bue_120630_Ansicht_Deckel.jpg'))
 picture.save!
 
 picture = Picture.new(id: 12, position: 1, product_id: 12)
-picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Unv_120630_Ansicht_Bild_Sockel.jpg'))
+picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Bue_120630_Ansicht_Sockel.jpg'))
 picture.save!
 
+# Multipictures
+picture = Picture.new(id: 13, position: 2, product_id: 1)
+picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Unv_120630_Ansicht_Bild_Faecher.jpg'))
+picture.save!
+
+picture = Picture.new(id: 14, position: 3, product_id: 1)
+picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Unv_120630_Ansicht_Bild_Deckel.jpg'))
+picture.save!
+
+picture = Picture.new(id: 15, position: 4, product_id: 1)
+picture.image = File.open(File.join(Rails.root, '/app/assets/images/products/Unv_120630_Ansicht_Bild_Sockel.jpg'))
+picture.save!
