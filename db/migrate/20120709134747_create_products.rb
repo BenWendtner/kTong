@@ -5,8 +5,6 @@ class CreateProducts < ActiveRecord::Migration
       t.string :color, :null => false
       t.integer :category_id, :null => false
       
-      t.has_attached_file :image
-      
       t.timestamps
     end
   end
