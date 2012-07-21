@@ -1,0 +1,6 @@
+$.fancybox([
+	<% @pictures.each do |f| %>
+		 '<%= f.image.url(:original) %>'<%= ',' if f != @pictures.last %>
+	<% end %>	
+]);
+
