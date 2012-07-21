@@ -20,11 +20,6 @@
 	<h2 id="leftbanner">Produkte</h2>
 	
 	<div class="accordion categories-accordion">
-		
-		<% 
-		   # Don't show "Sonstiges"
-		   @categories.delete_if{|category| category.name == 'Sonstiges'}
-		%>
 
 		<% @categories.each do |category| %>
 			<h3><%= link_to category.name, '#', :class => 'category-menu-item', :id => 'category-id-'+category.id.to_s %></h3>

@@ -11,7 +11,6 @@ User.create(id: 2, email: 'test2@test.com', password: '123test', password_confir
 
 # Create Categories
 Category.create(id: 1, name: 'Kartonmöbel')
-Category.create(id: 2, name: 'Sonstiges')
 
 Category.create(id: 3, name: 'Universalkarton', parent_id: 1)
 Category.create(id: 4, name: 'Bücherkarton', parent_id: 1)
