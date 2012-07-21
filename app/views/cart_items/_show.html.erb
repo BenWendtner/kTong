@@ -1,6 +1,14 @@
 <h1><%= product.name %></h1>
 <%= link_to(image_tag(product.pictures.first.image.url(:medium)),'#picture-box', :class => 'fancybox-link') %>
+
+<% product.pictures.each_with_index do |picture, i| %>
+	<% next if i == 0 %>
+	<%= link_to(image_tag(picture.image.url(:thumb))) %>
+<% end %>
+
 <p>Farbe: <%= product.color %></p>
+
+
 <div id="picture-box" style="display:none;">
 	<%= image_tag(product.pictures.first.image.url(:original)) %>
 </div>
