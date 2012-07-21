@@ -2,7 +2,10 @@
 	<% if !cart_items.nil? %>
 		<% cart_items.each do |cart_item| %>
 			<li id="cart-item-<%= cart_item.id %>">
-				<%= render :partial => 'cart_items/cart_item', :locals => {:cart_item => cart_item} %>
+				<div>
+					<div class="cartimage"><%= image_tag(cart_item.product.pictures.first.image.url(:thumb)) %></div>
+					<div class="carttext"><%= render :partial => 'cart_items/cart_item', :locals => {:cart_item => cart_item} %></div>
+				</div>
 			</li>
 		<% end %>
 	<% end %>
