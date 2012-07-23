@@ -25,6 +25,13 @@ header {
   
   h1 {
     display:inline;
+    
+    a:link, a:visited, a:hover, a:active {
+      color:$orange;
+      text-decoration:none;
+      
+      font-size:55px;
+    }
   }
 }
 
@@ -75,7 +82,13 @@ footer {
   margin:0 auto;
   padding-top:5px;
   
-  color:$green;
+  color:$orange;
+   
+  a:link, a:visited, a:hover, a:active {
+    color:$orange;
+    text-decoration:none;
+    font-weight:bold;
+  }
 }
 
 #left-banner {
