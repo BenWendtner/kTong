@@ -50,11 +50,18 @@ nav {
   color:$orange;
 }
 
+#centerbox {
+  width:1070px;
+  height:500px;
+  
+  margin:10px auto;
+}
+
 #content {
   width:1000px;
   height:500px;
   
-  margin:10px auto;
+  float:left;
   
   background-color:#fff;
   
@@ -69,4 +76,33 @@ footer {
   padding-top:5px;
   
   color:$green;
+}
+
+#left-banner {
+    width:35px;
+    height:500px;
+    
+    position:relative;
+    float:left;
+    left: 5px;
+
+    background-image:url('leftbanner_begin.png');
+    background-repeat: no-repeat;
+    background-position: 0px 25px;
+    
+    z-index:300;
+}
+
+#right-banner {
+    width:35px;
+    height:500px;
+    
+    position:relative;
+    float:left;
+  
+    background-image:url('rightbanner_begin.png');
+    background-repeat: no-repeat;
+    background-position: 0px 25px;
+    
+    z-index:300;
 }
