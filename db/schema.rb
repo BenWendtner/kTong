@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(:version => 20120725094500) do
     t.string   "name",        :null => false
     t.string   "color",       :null => false
     t.text     "description"
+    t.decimal  "price",       :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
