@@ -11,6 +11,8 @@ gem 'devise', '2.0.4'
 
 gem 'paperclip'
 
+gem 'activeadmin'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

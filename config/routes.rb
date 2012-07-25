@@ -1,5 +1,9 @@
 KTong::Application.routes.draw do
   
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   resources :cart_items
   post 'cart_items/get_product'
 

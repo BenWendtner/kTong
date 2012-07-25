@@ -1,7 +1,7 @@
-class CreateOrderitems < ActiveRecord::Migration
+class CreateOrderItems < ActiveRecord::Migration
   def change
     create_table :orderitems do |t|
-      t.integer :order_id
+      t.integer :order_id, :null => false
       
       t.string :name, :null => false
       t.string :color, :null => false

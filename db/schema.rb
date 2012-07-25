@@ -11,7 +11,52 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120721040301) do
+ActiveRecord::Schema.define(:version => 20120725094500) do
+
+  create_table "active_admin_comments", :force => true do |t|
+    t.string   "resource_id",   :null => false
+    t.string   "resource_type", :null => false
+    t.integer  "author_id"
+    t.string   "author_type"
+    t.text     "body"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "namespace"
+  end
+
+  add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
+  add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
+  add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
+
+  create_table "addresses", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.string   "firstname",  :null => false
+    t.string   "lastname",   :null => false
+    t.string   "address",    :null => false
+    t.string   "location",   :null => false
+    t.integer  "postalcode", :null => false
+    t.string   "country",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "admin_users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
+  add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "cart_items", :force => true do |t|
     t.integer  "user_id"
@@ -24,12 +69,8 @@ ActiveRecord::Schema.define(:version => 20120721040301) do
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.integer  "parent_id"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "elements", :force => true do |t|
@@ -46,6 +87,24 @@ ActiveRecord::Schema.define(:version => 20120721040301) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "orderitems", :force => true do |t|
+    t.integer  "order_id",    :null => false
+    t.string   "name",        :null => false
+    t.string   "color",       :null => false
+    t.integer  "category_id", :null => false
+    t.text     "description", :null => false
+    t.integer  "amount",      :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.date     "date",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "pictures", :force => true do |t|
     t.integer  "position",           :null => false
     t.integer  "product_id"
@@ -58,15 +117,12 @@ ActiveRecord::Schema.define(:version => 20120721040301) do
   end
 
   create_table "products", :force => true do |t|
-    t.string   "name",               :null => false
-    t.string   "color",              :null => false
-    t.integer  "category_id",        :null => false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.integer  "category_id", :null => false
+    t.string   "name",        :null => false
+    t.string   "color",       :null => false
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
