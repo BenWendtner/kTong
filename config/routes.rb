@@ -16,6 +16,8 @@ KTong::Application.routes.draw do
   get 'shop/index'
   get 'shop/checkout'
   
+  get 'order/index'
+  
   post 'pictures/get_pictures_original'
   
   # The priority is based upon order of creation:

@@ -12,7 +12,8 @@
 		<h1 id="logo"><%= link_to 'kTong', root_path %></h1>
 	<nav>
 		<% if user_signed_in? %>  
-			<%= link_to 'Account', edit_user_registration_path %> | Meine Bestellungen |
+			<%= link_to 'Account', edit_user_registration_path %> | 
+			<%= link_to 'Meine Bestellungen', order_index_path %> |
 			<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
 		<% else %>
 			<%= link_to 'Login', new_user_session_path %>
