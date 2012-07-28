@@ -1,6 +1,11 @@
 <ul>
 	
 <% @orders.each do |order| %>
-	<li>Ihre Bestellung vom <%= order.date %></li>
+	<li>Ihre Bestellung vom <%= order.created_at %></li>
+		<ul>
+		<% order.order_items.each do |order_item| %>
+			<li>&nbsp;&nbsp;<%= order_item.amount %>x <%= order_item.name %> in <%= order_item.color %></li>
+		<% end %>
+		</ul>
 <% end %>
 </ul>

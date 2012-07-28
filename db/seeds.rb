@@ -11,9 +11,6 @@ Order.delete_all
 User.create(id: 1, email: 'test1@test.com', password: '123test', password_confirmation: '123test', firstname: 'sebi', lastname: 'pöll', address: 'hinsenkampplatz 1', location: 'linz', postalcode: '4040')
 User.create(id: 2, email: 'test2@test.com', password: '123test', password_confirmation: '123test', firstname: 'sebi', lastname: 'pöll', address: 'hinsenkampplatz 1', location: 'linz', postalcode: '4040')
 
-# Create Orders
-Order.create(date: DateTime.now, user_id: 1)
-
 # Create Categories
 Category.create(id: 1, name: 'Kartonmöbel')
 

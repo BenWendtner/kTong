@@ -87,12 +87,11 @@ ActiveRecord::Schema.define(:version => 20120725094500) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "orderitems", :force => true do |t|
+  create_table "order_items", :force => true do |t|
     t.integer  "order_id",    :null => false
     t.string   "name",        :null => false
     t.string   "color",       :null => false
-    t.integer  "category_id", :null => false
-    t.text     "description", :null => false
+    t.text     "description"
     t.integer  "amount",      :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -100,7 +99,6 @@ ActiveRecord::Schema.define(:version => 20120725094500) do
 
   create_table "orders", :force => true do |t|
     t.integer  "user_id",    :null => false
-    t.date     "date",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
