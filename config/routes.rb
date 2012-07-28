@@ -17,6 +17,7 @@ KTong::Application.routes.draw do
   get 'shop/checkout'
   
   get 'order/index'
+  get 'order/create'
   
   post 'pictures/get_pictures_original'
   
