@@ -51,8 +51,8 @@
 		<%= render :partial => 'cart_items/index', :locals => {:cart_items => @cart_items} %>
 	</ul>
 	<% if @cart_items.count == 0 %>
-		<%= link_to '-> Zur Kasse', shop_checkout_path, :id => 'link-to-checkout', :style => 'display:none;' %>
+		<%= link_to '-> Zur Kasse', shop_checkout_path, :id => 'link-to-checkout', :class => 'orangebutton', :style => 'display:none;' %>
 	<% else %>
-		<%= link_to '-> Zur Kasse', shop_checkout_path, :id => 'link-to-checkout' %>
+		<%= link_to '-> Zur Kasse', shop_checkout_path, :id => 'link-to-checkout', :class => 'orangebutton' %>
 	<% end %>
 </div>
