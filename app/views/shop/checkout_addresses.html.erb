@@ -3,7 +3,8 @@
 <script type="text/javascript">
 	$(function(){
 		$('.address-list-item').click(function() {
-			alert('sd');
+			$('.address-list-item').removeClass('selected');
+			$(this).addClass('selected');
 		});
 	});
 </script>
@@ -19,11 +20,11 @@
    <%= f.label :address, 'Strasse / Hausnummer' %>
    <%= f.text_field :address %><br />
    
-   <%= f.label :location, 'Ort' %>
-   <%= f.text_field :location %><br />
-   
    <%= f.label :postalcode, 'Postleitzahl' %>
    <%= f.text_field :postalcode %><br />
+   
+   <%= f.label :location, 'Ort' %>
+   <%= f.text_field :location %><br />
    
    <%= f.label :country, 'Land' %>
    <%= f.select :country, options_for_select([['Österreich', 'at'], ['Deutschland', 'de'], ['Schweiz', 'ch']]) %>
