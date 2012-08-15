@@ -25,6 +25,7 @@ class ShopController < ApplicationController
   
   # 2/3 Addresses
   def checkout_addresses
+   @addresses = current_user.addresses
    @address = Address.new
    
    respond_to do |format|

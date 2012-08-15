@@ -1,6 +1,6 @@
-class OrderController < ApplicationController
+class OrdersController < ApplicationController
 
-   before_filter :authenticate_user!, :only => [:index, :create]
+  before_filter :authenticate_user!, :only => [:index, :create]
 
   def index
     @orders = current_user.orders
