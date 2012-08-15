@@ -1,0 +1,9 @@
+<% if !addresses.nil? %>
+	<% addresses.each do |address| %>
+		<li id="address-<%= address.id %>">
+			<div>
+				<%= render :partial => 'addresses/address', :locals => {:address => address} %>
+			</div>
+		</li>
+	<% end %>
+<% end %>

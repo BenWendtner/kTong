@@ -1,0 +1,5 @@
+<%= address.firstname %> <% address.lastname %><br />
+<%= address.address %><br />
+<%= address.location %> <% address.postalcode %><br />
+<%= address.country %><br />
+<%= link_to 'X', {:controller => 'addresses', :action=> 'destroy', :id => address.id}, :remote => true, :method => :delete %>

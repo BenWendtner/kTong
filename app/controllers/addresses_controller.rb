@@ -7,6 +7,7 @@ class AddressesController < ApplicationController
     @address = Address.new(params[:address])
     @address.user_id = current_user.id
     @address.save!
+    @addresses = Address.where('user_id = ?',current_user.id)
     
     respond_to do |format|
       format.js
