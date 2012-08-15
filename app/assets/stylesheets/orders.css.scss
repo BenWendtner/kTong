@@ -148,3 +148,24 @@
     from(#ffaa00),
     to(#ffbb00));
 }
+
+
+#new_address {
+  width: 350px;
+  margin-bottom:30px;
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, select {
+    float: right;
+    width: 100px;
+  }
+  
+  [type=submit] {
+    width: 200px;
+    clear: both;
+    margin: 0px auto;
+  }
+}
