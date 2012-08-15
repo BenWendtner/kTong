@@ -2,7 +2,7 @@
 
 <%= link_to(image_tag(product.pictures.first.image.url(:medium)), pictures_get_pictures_original_path(:picture_id => product.pictures.first.id), :method => 'post', :remote => true) %>
 
-<%= product.description%>
+<%= product.description %>
 
 <% product.pictures.each_with_index do |picture, i| %>
 	<% next if i == 0 %>

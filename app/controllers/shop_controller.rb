@@ -1,7 +1,8 @@
 class ShopController < ApplicationController
   
-  before_filter :authenticate_user!, :only => [:checkout]
+  before_filter :authenticate_user!, :except => [:index]
   
+  # 1/3 Products, Cart etc.
   def index
     @categories = Category.where("parent_id IS NULL")
      
@@ -22,7 +23,18 @@ class ShopController < ApplicationController
     end
   end
   
-  def checkout
+  # 2/3 Addresses
+  def checkout_addresses
+   @address = Address.new
+   
+   respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+  
+  # 3/3 Payment and overview
+  def checkout_payment
     @cart_items = current_user.cart_items
     
     respond_to do |format|

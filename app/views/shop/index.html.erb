@@ -1,4 +1,5 @@
-<!-- Nur zum Testen, wird noch entfernt -->
+<!-- This View contains the markup for the shopping, cart etc. -->
+
 <script type="text/javascript">
 	$(function(){
 		// Accordion
@@ -16,11 +17,10 @@
 	});
 </script>
 
+<!-- Navigation -->
 <div id="categories">
 	<h2 id="leftbanner">Produkte</h2>
-	
 	<div class="accordion categories-accordion">
-
 		<% @categories.each do |category| %>
 			<h3><%= link_to category.name, '#', :class => 'category-menu-item', :id => 'category-id-'+category.id.to_s %></h3>
 			<div class="accordion subcategories-accordion">
@@ -37,22 +37,21 @@
 	</div>
 </div>   
 	
-
-
+<!-- Product-Info and options -->
 <div id="middlebox">
 	<div id="description"><%= render :partial => 'cart_items/show', :locals => {:product => @product} %></div>
-
 	<div id="form"><%= render :partial => 'cart_items/form', :locals => {:cart_item => @cart_item} %></div>
 </div>
 
+<!-- Cart -->
 <div id="cart">
 	<h2 id="rightbanner">Warenkorb</h2>
 	<ul id="cart-item-list">
 		<%= render :partial => 'cart_items/index', :locals => {:cart_items => @cart_items} %>
 	</ul>
 	<% if @cart_items.count == 0 %>
-		<%= link_to '-> Zur Kasse', shop_checkout_path, :id => 'link-to-checkout', :class => 'orangebutton', :style => 'display:none;' %>
+		<%= link_to '-> Zur Kasse', shop_checkout_addresses_path, :id => 'link-to-checkout', :class => 'orangebutton', :style => 'display:none;' %>
 	<% else %>
-		<%= link_to '-> Zur Kasse', shop_checkout_path, :id => 'link-to-checkout', :class => 'orangebutton' %>
+		<%= link_to '-> Zur Kasse', shop_checkout_addresses_path, :id => 'link-to-checkout', :class => 'orangebutton' %>
 	<% end %>
 </div>
