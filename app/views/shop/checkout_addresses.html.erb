@@ -1,4 +1,27 @@
 <!-- This View contains the markup for address administration -->
 
+<%= form_for(@address, :url => url_for(:controller => 'addresses', :action => 'create'), :remote => true ) do |f| %>
+ 
+   <%= f.label :firstname, 'Vorname' %>
+   <%= f.text_field :firstname %><br />
+   
+   <%= f.label :lastname, 'Nachname' %>
+   <%= f.text_field :lastname %><br />
+   
+   <%= f.label :address, 'Strasse / Hausnummer' %>
+   <%= f.text_field :address %><br />
+   
+   <%= f.label :location, 'Ort' %>
+   <%= f.text_field :location %><br />
+   
+   <%= f.label :postalcode, 'Postleitzahl' %>
+   <%= f.text_field :postalcode %><br />
+   
+   <%= f.label :country, 'Land' %>
+   <%= f.select :country, (['Österreich', 'Deutschland', 'Schweiz']) %><br />
+   
+   <%= submit_tag("Adresse hinzufügen") %>
+   
+<% end %>
 
 <%= link_to '-> Zur Kasse', shop_checkout_payment_path, :id => 'link-to-checkout', :class => 'orangebutton' %>

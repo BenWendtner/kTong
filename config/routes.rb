@@ -16,8 +16,11 @@ KTong::Application.routes.draw do
   get 'shop/checkout_addresses'
   get 'shop/checkout_payment'
   
-  get 'order/index'
-  get 'order/create'
+  get 'orders/index'
+  get 'orders/create'
+  
+  post 'addresses/create'
+  post 'addresses/destroy'
   
   post 'pictures/get_pictures_original'
   
