@@ -1,5 +1,13 @@
 <!-- This View contains the markup for address administration -->
 
+<script type="text/javascript">
+	$(function(){
+		$('.address-list-item').click(function() {
+			alert('sd');
+		});
+	});
+</script>
+
 <%= form_for(@address, :url => url_for(:controller => 'addresses', :action => 'create'), :remote => true ) do |f| %>
  
    <%= f.label :firstname, 'Vorname' %>
@@ -18,7 +26,7 @@
    <%= f.text_field :postalcode %><br />
    
    <%= f.label :country, 'Land' %>
-   <%= f.select :country, (['Österreich', 'Deutschland', 'Schweiz']) %><br />
+   <%= f.select :country, options_for_select([['Österreich', 'at'], ['Deutschland', 'de'], ['Schweiz', 'ch']]) %>
    
    <%= submit_tag("Adresse hinzufügen") %>
    
@@ -30,4 +38,4 @@
 	</ul>
 </div>
 
-<%= link_to '-> Zur Kasse', shop_checkout_payment_path, :id => 'link-to-checkout', :class => 'orangebutton' %>
+<%= link_to '-> Weiter zur Bestellübersicht', shop_checkout_payment_path, :id => 'link-to-checkout', :class => 'orangebutton' %>
