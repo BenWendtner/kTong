@@ -34,8 +34,16 @@
   
   float:right;
   
-  ul, li {
+  
+  
+  ul {
     list-style:none;
+    
+    height:360px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+    margin-bottom:10px;
   }
 }
 
