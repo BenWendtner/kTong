@@ -1,1 +1,9 @@
 $('#address-<%= @address.id %>').remove();
+
+var selected = false;
+$('.address-list-item').each(function() {
+	if ($(this).hasClass('selected'))
+		selected = true;
+});
+if (!selected)
+	$('#link-to-checkout-payment').hide();
