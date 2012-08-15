@@ -3,7 +3,7 @@
 ActiveAdmin.register Product do
   index do
     column 'Kategorie und Name', :category do |product|
-     product.category.parent.parent.name + ' / ' + product.category.parent.name + ' / ' + product.name
+      product.category.parent.parent.name + ' / ' + product.category.parent.name + ' / ' + product.name
     end
     column 'Farbe', :color
     column 'Preis', :price
