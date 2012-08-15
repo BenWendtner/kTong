@@ -3,9 +3,7 @@ ActiveAdmin.register User do
     column 'Email-Adresse', :email
     column 'Registriert seit', :created_at
     
-    column 'Anzahl der Bestellungen', :orders do |order|
-      order.size
-    end
+    column 'Anzahl der Bestellungen', :orders.size
     
   end
   
