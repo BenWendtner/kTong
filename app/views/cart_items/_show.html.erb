@@ -1,12 +1,21 @@
-<h1><%= product.name %></h1>
 
+
+<div class="product-image-box">
 <%= link_to(image_tag(product.pictures.first.image.url(:medium)), pictures_get_pictures_original_path(:picture_id => product.pictures.first.id), :method => 'post', :remote => true) %>
+</div>
 
-<%= product.description %>
+<div class="product-description-box">
+	<h1><%= product.name %></h1>
+	
+	<%= product.description %>
+	
+</div>
 
-<% product.pictures.each_with_index do |picture, i| %>
-	<% next if i == 0 %>
-	<%= link_to(image_tag(picture.image.url(:thumb)), pictures_get_pictures_original_path(:picture_id => picture.id), :method => 'post', :remote => true) %>
-<% end %>
+<div class="clear-helper"></div>
 
-<p>Farbe: <%= product.color %></p>
+<div class="product-thumbnails-box">
+	<% product.pictures.each_with_index do |picture, i| %>
+		<% next if i == 0 %>
+		<%= link_to(image_tag(picture.image.url(:thumb)), pictures_get_pictures_original_path(:picture_id => picture.id), :method => 'post', :remote => true) %>
+	<% end %>
+</div>

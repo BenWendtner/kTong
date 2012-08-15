@@ -5,6 +5,10 @@
 /* Import colors, mixins and buttons */
 @import 'global';
 
+.clear-helper {
+  clear:both;
+}
+
 #categories {
   width:250px;
   height:500px;
@@ -81,6 +85,25 @@
 
 #link-to-checkout {
   text-decoration:none;
+}
+
+.product-image-box {
+  float:left;
+}
+
+.product-description-box {
+  float:right;
+  margin-right:15px;
+  
+  width:250px;
+}
+
+.product-form {
+  margin-top:10px;
+}
+
+.product-thumbnails-box {
+  height: 80px;
 }
 
 .orangebutton {
