@@ -12,9 +12,9 @@ KTong::Application.routes.draw do
   match 'Impressum' => 'static#impressum', :as => :impressum
   match 'AGB' => 'static#agb', :as => :agb
   
-  
   get 'shop/index'
-  get 'shop/checkout'
+  get 'shop/checkout_addresses'
+  get 'shop/checkout_payment'
   
   get 'order/index'
   get 'order/create'
