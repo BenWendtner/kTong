@@ -1,16 +1,18 @@
-<%= form_for(cart_item, :remote => true ) do |f| %>
-	<%= f.hidden_field :product_id, :value => cart_item.product.id %>
-	 
-	<%= f.label :amount, 'Stückzahl' %>:
-	<%= f.text_field :amount, :value => 1 %>
-	
-	<% if cart_item.product.category.products.size > 1 %>
-		<select onChange="$.post('<%= cart_items_get_product_path %>', {category_id: <%= cart_item.product.category.id %>, color: $(this).val()})">
-			<% cart_item.product.category.products.each do |product| %>
-				<option><%= product.color.capitalize %></option>
-			<% end %>
-		</select>
+<div class="product-form">
+	<%= form_for(cart_item, :remote => true ) do |f| %>
+		<%= f.hidden_field :product_id, :value => cart_item.product.id %>
+		 
+		<%= f.label :amount, 'Stückzahl' %>:
+		<%= f.text_field :amount, :value => 1 %>
+		
+		<% if cart_item.product.category.products.size > 1 %>
+			<select onChange="$.post('<%= cart_items_get_product_path %>', {category_id: <%= cart_item.product.category.id %>, color: $(this).val()})">
+				<% cart_item.product.category.products.each do |product| %>
+					<option><%= product.color.capitalize %></option>
+				<% end %>
+			</select>
+		<% end %>
+		
+	    <%= f.submit 'In den Warenkorb', :class => 'orangebutton' %>
 	<% end %>
-	
-    <%= f.submit %>
-<% end %>
+</div>
