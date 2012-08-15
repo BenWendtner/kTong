@@ -5,7 +5,12 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new(params[:address])
+    @address.user_id = current_user.id
     @address.save!
+    
+    respond_to do |format|
+      format.js
+    end
   end
   
   def destroy
