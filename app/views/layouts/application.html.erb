@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>KTong</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<%= flash[:notice] %>
-	<header>
-		<h1 id="logo"><%= link_to 'kTong', root_path %></h1>
-	<nav>
-		<% if user_signed_in? %>  
-			<%= link_to 'Account', edit_user_registration_path %> | 
-			<%= link_to 'Meine Bestellungen', orders_index_path %> |
-			<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-		<% else %>
-			<%= link_to 'Login', new_user_session_path %>
-		<% end %>
-	</nav>
-	</header>
-	
-	<div id="centerbox">
-		<div id="left-banner"></div>
+	<head>
+	  	<title>KTong</title>
+	  	<%= stylesheet_link_tag    "application", :media => "all" %>
+	  	<%= javascript_include_tag "application" %>
+	  	<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= flash[:notice] %>
+		<header>
+			<h1 id="logo"><%= link_to 'kTong', root_path %></h1>
+		<nav>
+			<% if user_signed_in? %>  
+				<%= link_to 'Account', edit_user_registration_path %> | 
+				<%= link_to 'Meine Bestellungen', orders_index_path %> |
+				<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+			<% else %>
+				<%= link_to 'Login', new_user_session_path %>
+			<% end %>
+		</nav>
+		</header>
 		
-		<div id=content>
-		<%= yield %>
+		<div id="centerbox">
+			<div id="left-banner"></div>
+			
+			<div id=content>
+			<%= yield %>
+			</div>
+			
+			<div id="right-banner"></div>
 		</div>
 		
-		<div id="right-banner"></div>
-	</div>
+		<footer>
+			Hier kommt einmal der Footer hin... 
+			<%= link_to 'Impressum', impressum_path %>,
+			<%= link_to 'AGB', agb_path %>
 	
-	<footer>
-		Hier kommt einmal der Footer hin... 
-		<%= link_to 'Impressum', impressum_path %>,
-		<%= link_to 'AGB', agb_path %>
-
-	</footer>
-</body>
+		</footer>
+	</body>
 </html>

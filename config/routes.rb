@@ -20,7 +20,7 @@ KTong::Application.routes.draw do
   get 'orders/create'
   
   post 'addresses/create'
-  post 'addresses/destroy'
+  delete 'addresses/destroy'
   
   post 'pictures/get_pictures_original'
   

@@ -24,4 +24,19 @@
    
 <% end %>
 
+
+<div id="addresses-box">
+	<ul>
+		<% @addresses.each do |address| %>
+			<li>
+				<%= address.firstname %> <% address.lastname %><br />
+				<%= address.address %><br />
+				<%= address.location %> <% address.postalcode %><br />
+				<%= address.country %><br />
+				<%= link_to 'X', {:controller => 'addresses', :action=> 'destroy', :id => address.id}, :remote => true, :method => :delete %>
+			</li>
+		<% end %>
+	</ul>
+</div>
+
 <%= link_to '-> Zur Kasse', shop_checkout_payment_path, :id => 'link-to-checkout', :class => 'orangebutton' %>
