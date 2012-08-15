@@ -1,1 +1,11 @@
-$('#addresses-list').html('<%= escape_javascript(render :partial => 'addresses/index', :locals => {:addresses => @addresses}) %>')
+$('#addresses-list').html('<%= escape_javascript(render :partial => 'addresses/index', :locals => {:addresses => @addresses}) %>');
+
+$('.address-list-item').removeClass('selected');
+$('#address-<%= @address.id %>').addClass('selected');
+
+$(function(){
+	$('.address-list-item').click(function() {
+		$('.address-list-item').removeClass('selected');
+		$(this).addClass('selected');
+	});
+});

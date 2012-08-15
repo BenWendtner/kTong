@@ -1,4 +1,4 @@
-$('#cart-item-list').html('<%= escape_javascript(render :partial => 'cart_items/index', :locals => {:cart_items => @cart_items}) %>')
+$('#cart-item-list').html('<%= escape_javascript(render :partial => 'cart_items/index', :locals => {:cart_items => @cart_items}) %>');
 <% if @cart_items.count > 0 %>
 	$('#cart #link-to-checkout').show();
 <% end %>
