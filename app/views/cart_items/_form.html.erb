@@ -6,16 +6,17 @@
 			<%= f.label :amount, 'Stückzahl' %>:
 			<%= f.text_field :amount, :value => 1, :maxlenght => 3 %>
 		</div>
+		
+		<% if cart_item.product.category.products.size > 1 %>
 		<div id="color-formfield"> 
 			<label for="cart_item_color">Farbe: </label>
-			<% if cart_item.product.category.products.size > 1 %>
 				<select id="cart_item_color" name="cart_item_[color]" onChange="$.post('<%= cart_items_get_product_path %>', {category_id: <%= cart_item.product.category.id %>, color: $(this).val()});">
 					<% cart_item.product.category.products.each do |product| %>
 						<option><%= product.color.capitalize %></option>
 					<% end %>
 				</select>
-			<% end %>
 		</div>
+		<% end %>
 		
 	    <%= f.submit 'In den Warenkorb', :class => 'button green' %>
 	<% end %>
