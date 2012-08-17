@@ -169,3 +169,15 @@
     margin: 0px auto;
   }
 }
+
+.address-list-item {
+  cursor:pointer;
+  
+  color:#666;
+}
+
+.address-list-item.selected {
+  color:black;
+  font-weight:bold;
+  margin-left:20px;
+}
