@@ -88,18 +88,28 @@
 }
 
 .product-image-box {
-  float:left;
+   width: 200px;
 }
 
 .product-description-box {
-  float:right;
+  float:left;
   margin-right:15px;
   
-  width:250px;
 }
 
 .product-form {
-  margin-top:10px;
+  
+  position: relative;
+  top: -350px;
+  left: 250px;
+  
+  width: 200px;
+  
+  background-color:lime;
+  
+  input {
+    width: 200px;
+  }
 }
 
 .product-thumbnails-box {
