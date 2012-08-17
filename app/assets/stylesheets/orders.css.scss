@@ -108,26 +108,32 @@ div#form {
   
   
   input {
-    width: 50px;
+    width: 30px;
+    padding-left: 3px;
+    
+    height: 20px;
     float: right;
-    text-align: center;
+    
+
   }
   
   select {
     width: 100px;
-    float: right;    
+    height: 22px;
+    float: right; 
   }
   
   [type=submit] {
     width: 200px;
+    height: 30px;
   }
   
   #amount-formfield {
-    margin-bottom:10px;
+    margin-bottom:15px;
   }
   
   #color-formfield {
-    margin-bottom:10px;
+    margin-bottom:15px;
   }
     
 }
