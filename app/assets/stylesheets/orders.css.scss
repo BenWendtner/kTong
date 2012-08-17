@@ -106,48 +106,41 @@
   height: 80px;
 }
 
-.orangebutton {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  color: #050505;
-  padding: 10px 20px;
-  background: -moz-linear-gradient(
-    top,
-    #ff7700 0%,
-    #ffbf00);
-  background: -webkit-gradient(
-    linear, left top, left bottom, 
-    from(#ff7700),
-    to(#ffbf00));
-  -moz-border-radius: 30px;
-  -webkit-border-radius: 30px;
-  border-radius: 30px;
-  border: 1px solid #666666;
-  -moz-box-shadow:
-    0px 2px 3px rgba(000,000,000,0.6),
-    inset 0px 0px 1px rgba(255,255,255,0.7);
-  -webkit-box-shadow:
-    0px 2px 3px rgba(000,000,000,0.6),
-    inset 0px 0px 1px rgba(255,255,255,0.7);
-  box-shadow:
-    0px 2px 3px rgba(000,000,000,0.6),
-    inset 0px 0px 1px rgba(255,255,255,0.7);
-  text-shadow:
-    0px -1px 0px rgba(000,000,000,0.4),
-    0px 1px 0px rgba(255,255,255,0.3);
-}
-
-.orangebutton:hover {
+  
+  
+/*************************************** Buttons **************************************/
+  
+    
+.button {
+  padding: 5px 10px;
+  display: inline;
+  background: #777 url(button.png) repeat-x bottom;
+  border: none;
   color: #fff;
-  background: -moz-linear-gradient(
-    top,
-    #ffaa00 0%,
-    #ffbb00);
-  background: -webkit-gradient(
-    linear, left top, left bottom, 
-    from(#ffaa00),
-    to(#ffbb00));
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration:none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  text-shadow: 1px 1px #666;
 }
+.button:hover {
+  background-position: 0 center;
+  }
+.button:active {
+  background-position: 0 top;
+  position: relative;
+  top: 1px;
+  padding: 6px 10px 4px;
+  }
+.button.green { background-color: #58aa00; }
+.button.orange { background-color: #ff9c00; }
+.button.small { font-size: 75%; padding: 3px 7px; }
+.button.small:active { padding: 4px 7px 2px; background-position: 0 top; }
+.button.large { font-size: 125%; padding: 7px 12px; }
+.button.large:active { padding: 8px 12px 6px; background-position: 0 top; }
+
 
 
 #new_address {
