@@ -97,7 +97,7 @@
   
 }
 
-.product-form {
+div#form {
   
   position: relative;
   top: -350px;
@@ -105,7 +105,7 @@
   
   width: 200px;
   
-  background-color:lime;
+
   
   input {
     width: 200px;
@@ -151,7 +151,9 @@
 .button.large { font-size: 125%; padding: 7px 12px; }
 .button.large:active { padding: 8px 12px 6px; background-position: 0 top; }
 
-
+.button.disabled {
+  background-color: #666;
+}
 
 #new_address {
   width: 350px;
