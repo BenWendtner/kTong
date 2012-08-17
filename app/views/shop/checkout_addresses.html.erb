@@ -4,7 +4,7 @@
 	$(function(){
 		$('.select-address').click(function() {
 			$('.address-list-item').removeClass('selected');
-			$(this).parent().addClass('selected');
+			$(this).parents('.address-list-item').addClass('selected');
 			$('#link-to-checkout-payment').show();
 		});
 	});
