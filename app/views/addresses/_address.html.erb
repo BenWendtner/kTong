@@ -1,4 +1,6 @@
-<%= address.firstname %> <%= address.lastname %><br />
-<%= address.address %><br />
-<%= address.location %> <%= address.postalcode %>, <%= address.country.upcase %><br />
+<div class="select-address">
+	<%= address.firstname %> <%= address.lastname %><br />
+	<%= address.address %><br />
+	<%= address.location %> <%= address.postalcode %>, <%= address.country.upcase %><br />
+</div>
 <%= link_to 'X', {:controller => 'addresses', :action=> 'destroy', :id => address.id}, :remote => true, :method => :delete %>
