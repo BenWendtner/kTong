@@ -105,11 +105,31 @@ div#form {
   
   width: 200px;
   
-
+  
   
   input {
+    width: 50px;
+    float: right;
+    text-align: center;
+  }
+  
+  select {
+    width: 100px;
+    float: right;    
+  }
+  
+  [type=submit] {
     width: 200px;
   }
+  
+  #amount-formfield {
+    margin-bottom:10px;
+  }
+  
+  #color-formfield {
+    margin-bottom:10px;
+  }
+    
 }
 
 .product-thumbnails-box {
@@ -151,8 +171,10 @@ div#form {
 .button.large { font-size: 125%; padding: 7px 12px; }
 .button.large:active { padding: 8px 12px 6px; background-position: 0 top; }
 
-.button.disabled {
-  background-color: #666;
+.button.disabled, .button.disabled:visited, .button.disabled:hover, .button.disabled:active {
+  background-color: #ccc;
+  background-position:bottom;
+  cursor: default;
 }
 
 #new_address {
