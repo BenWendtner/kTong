@@ -1,6 +1,7 @@
 class ShopController < ApplicationController
   
   before_filter :authenticate_user!, :except => [:index]
+  before_filter :cart_not_empty!, :except => [:index]
   
   # 1/3 Products, Cart etc.
   def index
@@ -41,6 +42,14 @@ class ShopController < ApplicationController
     respond_to do |format|
       format.html
       format.json
+    end
+  end
+  
+  private
+  # Before Filter to make shure the cart is not empty
+  def cart_not_empty!
+    if current_user.cart_items.size <= 0
+      redirect_to :root
     end
   end
   
