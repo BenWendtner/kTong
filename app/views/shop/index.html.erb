@@ -50,7 +50,7 @@
 		<%= render :partial => 'cart_items/index', :locals => {:cart_items => @cart_items} %>
 	</ul>
 	<% if @cart_items.count == 0 %>
-		<%= link_to '-> Weiter zur Kasse', shop_checkout_addresses_path, :id => 'link-to-checkout', :class => 'button green', :style => 'display:none;' %>
+		<%= link_to '-> Weiter zur Kasse', shop_checkout_addresses_path, :id => 'link-to-checkout', :class => 'button green disabled' %>
 	<% else %>
 		<%= link_to '-> Weiter zur Kasse', shop_checkout_addresses_path, :id => 'link-to-checkout', :class => 'button green' %>
 	<% end %>
